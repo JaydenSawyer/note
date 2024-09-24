@@ -13,7 +13,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    
+    @IBAction func yo(_ sender: UITapGestureRecognizer) {
+        view.backgroundColor =  UIColor.lightGray
+        var tapped = sender.location(in: view)
+        label.center = tapped
+        print("tap")
+    }
+    
+    @IBAction func pan(_ sender: UIPanGestureRecognizer) {
+        var pann = sender.location(in: view)
+        image.center = pann
+        print("Pan")
+    }
 }
 
